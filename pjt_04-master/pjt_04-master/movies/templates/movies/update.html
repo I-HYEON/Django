@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>영화 정보 수정</h2>
+<form action="{% url 'movies:update' movie.id %}" method ="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <hr>
+    <input type="reset" value="초기화">
+    <input type="submit" value="수정 완료">
+</form>
+<a href="{% url 'movies:detail' movie.id %}">이전으로 돌아가기</a>
+{% endblock content %}

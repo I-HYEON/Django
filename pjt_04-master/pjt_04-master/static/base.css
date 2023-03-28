@@ -1,0 +1,55 @@
+* {
+    font-family: 'Gowun Batang', serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card,
+.content {
+    margin: 20px 0;
+}
+
+.img {
+    width: 16rem;
+}
+
+.show-more {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+}
+
+.card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.bar-container {
+    color: red;
+    display: flex;
+    justify-content: space-between;
+}
+
+.your-option {
+    display:flex;
+    justify-content: center;
+}
+
+.index-box {
+    width: 900px;
+}
+
+.m-title {
+    display:inline-block;
+    width: 200px;
+}
+
+.temp-box {
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>INDEX</h3>
+{% for article in articles %}
+<ul>
+    <li><a href="{% url 'articles:detail' article.id %}">{{article.id}}번글</a></li>
+    <li>제목 : {{article.title}}</li>
+</ul>
+<hr>
+{% endfor %}
+<a href="{% url 'articles:create' %}"><button>새글작성</button></a>
+
+{% endblock content %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="temp-box">
+      <div class="temp-img"><img src="https://image.tmdb.org/t/p/w500{{movie.poster_url}}" class="card-img-top" alt="영화포스터"></div>
+      <div class="card" style="width: 20rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{movie.title}}</h5>
+          <p id="description" class="card-text show-more">{{movie.description}}</p>
+          <button id="more">더보기</button>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Audience:{{movie.audience}}</li>
+          <li class="list-group-item">Release Dates:{{movie.release_date}}</li>
+          <li class="list-group-item">Genre:{{movie.genre}}</li>
+          <li class="list-group-item">Score:{{movie.score}}</li>
+          {% if movie.actor_image %}
+          <li class="list-group-item">Actor_image: <img style="width:16rem;" src="{{movie.actor_image.url}}" alt="영화이미지"></li>
+          {% endif %}
+        </ul>
+        <div class="card-body">
+          <a href="{% url 'movies:update' movie.id %}" class="card-link">수정하기</a>
+          <a href="{% url 'movies:delete' movie.id %}" class="card-link">삭제하기</a>
+        </div>
+      </div>
+    </div>
+   
+      <a href="{% url 'movies:index' %}">목록으로 돌아가기</a>
+      <script src="{% static 'js/main.js' %}"></script>
+      <link rel="stylesheet" href="{% static 'base.css' %}">
+{% endblock content %}

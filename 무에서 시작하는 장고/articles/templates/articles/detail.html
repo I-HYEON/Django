@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Detail</h2>
+    <p>제목 : {{article.title}}</p>
+    <p>내용 : {{article.content}}</p>
+    <p>작성시간 : {{article.created_at}}</p>
+    <p>수정시간 : {{article.updated_at}}</p>
+    <hr>
+    <a href="{% url 'articles:update' article.id %}"><button>수정하기</button></a>
+    <a href="{% url 'articles:delete' article.id %}"><button>삭제하기</button></a><br>
+    <a href="{% url 'articles:index' %}">목록으로 돌아가기</a>
+{% endblock content %}
